@@ -1,0 +1,42 @@
+
+## Here, the scRNA data from Trichplax will be mapped to the symbiont reference genome to find the symbiont transcript in the scRNA data. 
+
+
+# download the raw files from NCBI GEO depository with SRA toolkit
+# First, download, install and configure SRA toolkit
+ ./vdb-config -i
+# create and select the directory for the prefetch
+mkdir scTriH2/local_file_caching/sra/SRR000001
+sratoolkit.3.1.1-ubuntu64/bin/prefetch SRR0000001 -O scTriH2/local_file_caching/sra/SRR000001
+srapath SRR24886421 https://sra-download.ncbi.nlm.nih.gov/srapub/SRR00001
+# Once the .sra files are downloaded, download the fastq files    
+sratoolkit.3.1.1-ubuntu64/bin/fasterq-dump SRR000001
+#or download in the fastq file
+sratoolkit.3.1.1-ubuntu64/bin/prefetch SRR24886421 -O local_file_caching
+sratoolkit.3.1.1-ubuntu64/bin/fasterq-dump --split-files SRR000001 --outdir local_file_caching/sra 
+# but this is without zipped files, the data is too big, so try to get the files gzipped
+sratoolkit.3.1.1-ubuntu64/bin/fastq-dump --outdir local_file_caching/sra/SRR24886421  --gzip --skip-technical  --read-filter pass --readids --dumpbase --split-3 --clip local_file_caching/sra/SRR24886421/SRR24886421.sra
+#GEO repository: Series GSE234601
+    # SRR24886422 : GSM7471618 Trichoplax sp. H2 scRNA-seq 1
+        # spots read      : 81,868,857
+        # reads read      : 163,737,714
+        # reads written   : 163,737,714
+    # SRR24886421 : GSM7471619 Trichoplax sp. H2 scRNA-seq 2
+        # spots read      : 68,619,181
+        # reads read      : 137,238,362
+        # reads written   : 137,238,362
+    # SRR24886420 : GSM7471620 	Trichoplax sp. H2 scRNA-seq 3
+ls -l SRR000001.fastq
+chmod 664 SRR24886422.fastq
+    # -rw-rw-r-- 1 root root 8219656192 Oct 25 15:25 SRR24886422.fastq
+
+
+## CellRanger
+# The step of demultiplexing is skipped thanks to the raw files in NCBI in .fastq format
+
+# Input
+
+# path to cellranger
+cellranger_path="/scTriH2/cellranger-8.0.1"
+mkdir /scTriH2/sc_analysis/run_cellranger_count
+

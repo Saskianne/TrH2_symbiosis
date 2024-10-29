@@ -1,0 +1,28 @@
+# Terminal
+The best way to access terminal is through the WSL app. This only works when the laptop is connected with the LAN physically. 
+
+# Accessing WS1
+ssh -p 22 **user**@134.245.173.59  # to access via ssh
+scp -P 22 **user**@134.245.173.59:/path/to/target/remote/file path/to/local/destination/folder
+scp -rP 22 **user**@134.245.173.59:/path/to/target/remote/folder path/to/local/destination/folder
+
+user: bachelorprojects
+pwd: chemosynthesis7
+ssh -p 22 bachelorprojects@134.245.173.59
+
+screen # command to open a window on the remote computer which is ran on the remote computer
+man screen #for manual for screen
+# you need to give the connection a name to identify your connection
+screen -S 'name' # create a connection with the 'name'
+screen -r 'name' # reattach the screen created
+screen -dr 'name' # detach and reattach the screen, if you didn't detach previously
+screen -ls # list up the existing screens
+ctrl + A  # activation of screen shortcuts 
+ctrl + A d # detach into your original terminal on your computer
+ctrl + A k # Detach from and kill the screen 
+exit # to end the connection to the remote access
+
+cd / # change directory to the root
+/media/data # create your files and storage the data in this folder cuz this has more space
+
+mkdir
