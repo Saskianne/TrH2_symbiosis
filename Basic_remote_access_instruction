@@ -25,4 +25,14 @@ exit # to end the connection to the remote access
 cd / # change directory to the root
 /media/data # create your files and storage the data in this folder cuz this has more space
 
-mkdir
+sudo mkdir 
+sudo umount /mnt/d
+sudo mount -t drvfs D: /mnt/d
+
+conda activate scTrH2_env
+which conda
+conda init
+source  ~/.bashrc
+conda activate scTrH2_env
+conda env list
+source ~/anaconda3/bin/activate scTrH2_env
