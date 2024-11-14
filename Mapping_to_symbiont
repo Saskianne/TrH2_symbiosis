@@ -35,7 +35,29 @@ chmod 664 SRR24886422.fastq
 ## CellRanger
 # The step of demultiplexing is skipped thanks to the raw files in NCBI in .fastq format
 
-# Input
+# Download cellranger from 10X Genomics website (v. 8.0.1)
+# Install cellranger by unzipping and unpacking
+tar -xzvf $PATH/cellranger-8.0.1.tar
+tar -xvf $PATH/cellranger-8.0.1.tar
+# A new directory named cellranger-8.0.1 is created
+# export the cellranger 
+export PATH=/mnt/e/scTriH2/cellranger-8.0.1:$PATH
+# check the successful addition of cellranger to $PATH
+which cellranger
+# now you can use ~/cellranger symbol to use cellranger
+~/cellranger
+
+# Input: 
+    # Symbiont reference genome data: 
+        # Grelia_incantans_TRH2_HGV.fasta
+        # RETAH2_CDS
+        # Ruthmannia_H2
+    # Annotation data of reference: 
+        # Grellia_incantans_TRH2_HVG.genbankCurated
+    # The Trichoplax H2 genome file from NCBI:
+        # SRR24886422
+        # SRR24886421
+        # SRR24886420
 
 # path to cellranger
 cellranger_path="/scTriH2/cellranger-8.0.1"
