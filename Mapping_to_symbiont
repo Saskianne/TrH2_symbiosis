@@ -8,6 +8,7 @@
 # create and select the directory for the prefetch
 mkdir scTriH2/local_file_caching/sra/SRR000001
 sratoolkit.3.1.1-ubuntu64/bin/prefetch SRR0000001 -O scTriH2/local_file_caching/sra/SRR000001
+~/anaconda3/envs/scTrH2_env/bin/prefetch SRR24886420 -O local_file_caching/sra/SRR24886420
 srapath SRR24886421 https://sra-download.ncbi.nlm.nih.gov/srapub/SRR00001
 # Once the .sra files are downloaded, download the fastq files    
 sratoolkit.3.1.1-ubuntu64/bin/fasterq-dump SRR000001
@@ -39,4 +40,6 @@ chmod 664 SRR24886422.fastq
 # path to cellranger
 cellranger_path="/scTriH2/cellranger-8.0.1"
 mkdir /scTriH2/sc_analysis/run_cellranger_count
+
+(scTrH2_env) root@DESKTOP-L0N1C7I:/mnt/e/scTriH2# cellranger-8.0.1/bin/sc_rna/count
 
