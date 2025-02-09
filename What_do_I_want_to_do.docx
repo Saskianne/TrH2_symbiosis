@@ -1,0 +1,13 @@
+I have SeuratObjects created with single cell transcript data-raw feature-barcode-matrix-which host transcriptome mapped to symbiont genome to detect symbiont transcript, here raw_matrix. But here the feature is encoded that I need to replace the feature names like GenBank:CDS:NODE_44068+_length_28286_cov_17.8349:19676:20149 with the gene name from gbk.gff file so that I can recognize which gene it actually is. 
+I also have a metacell_output file in RDS format and feature-barcode-matrix of host genes to host transcriptome, here host_matrix. The UMI for cells are same in feature-barcode-matrices, both in raw_matrix and host_matrix. 
+These are tasks I want to do:
+1. Do quality control and filter the raw_matrix
+2. There are several raw_matrices. I want to summarize them in one summary_matrix. 
+3. Do some statistics: 
+- which genes are abundant or rare, I want an ordered table of genes with its abundance
+- which cell contains more symbiont genes, I want an ordered table of cells with the read counts, if possible also gene numbers
+- I want to compare the total read counts to count of reads mapped to symbiont and get a relative abundance statistics for each cell. The table should look like: cell_id, host reads, symbiont reads, relative abundance of symbiont in %
+   -> I want to do it for total genes but also specifically for 16S genes
+4. I want to visualize the symbiont metacell to the cell atlas already existing (placozoa cell atlas, Trichoplax H2.) 
+- I want to know what I need to input to analyze the symbiont sc data with metacell and how to combine it with the metacell result of host sc data. 
+I know it is a long request, but I would appreciate it if you could tell me step by step how to do the analysis. Also, please explain which inputs are required and which outputs are generated. 
