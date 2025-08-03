@@ -1,7 +1,7 @@
 # TrH2_symbiosis
 
 In this, you can read what I am doing during my research internship. 
-The subject of my intership is to find out with which cell type of Trychoplax sp. H2 (TrH2) is associated with the symbionts. For this, the scRNA raw data of TrH2 were acquired from the NCBI. (Details in each code description.)The reference symbiont genome were provided by Harald. (https://keeper.mpdl.mpg.de/d/f876ded599e94520ae27/)
+The subject of my intership is to find out with which cell type of Trychoplax sp. H2 (TrH2) is associated with the symbionts. For this, the scRNA raw data of TrH2 were acquired from the NCBI. (Details in each code description.)The reference symbiont genomes were provided by Harald. (https://keeper.mpdl.mpg.de/d/f876ded599e94520ae27/)
 The files provided were following:
 - Symbiont reference genome .fasta, .gtf and .gff files
     - Grellia_incantans_TRH2_HVG.fasta
