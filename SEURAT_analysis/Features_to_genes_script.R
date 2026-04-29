@@ -18,7 +18,7 @@ if (length(fasta_start) > 0) {
 temp_gff_file <- tempfile(fileext = ".gff")
 writeLines(gff_lines, temp_gff_file)
 
-# Now read the GFF content safely
+# Read the GFF content
 gff_data <- read.table(temp_gff_file, sep = "\t", header = FALSE, comment.char = "#", quote = "", stringsAsFactors = FALSE)
 
 # Assign GFF column names
