@@ -24,11 +24,8 @@ The cellranger was downloaded but I couldn't call the command inside the cellran
 - Command:
     cellranger count --id=SRR(accession no.) --create-bam=true --transcriptome=/gxfs_work/cau/sunzm503/20.HaraldLab/2.scTrichoplaxSymbiont/0.refGrellia/GrelliaIncantansGbk --fastqs=/gxfs_work/cau/sunzm503/20.HaraldLab/2.scTrichoplaxSymbiont/0.rawData/(path_to_sc_transcriptome_data)
 -  For the scRNA samples with these (NCBI) accession numbers: 
-    - SRR24887387
     - SRR24886407
-    - SRR24886410
     - SRR24886411
-    - SRR24886416
     - SRR24886417 
     - SRR24886420
     - SRR24886421
